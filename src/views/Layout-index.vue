@@ -1,12 +1,10 @@
 <template>
-  <div>
-    App
-  </div>
+  <div></div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'LayoutIndex'
 }
 </script>
 

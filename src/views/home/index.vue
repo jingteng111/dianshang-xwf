@@ -1,11 +1,10 @@
 <template>
-  <!-- 一级路由 -->
-  <router-view />
+  <div class="container">111</div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'HomePage'
 }
 </script>
 

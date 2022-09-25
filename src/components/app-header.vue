@@ -1,9 +1,10 @@
 <template>
   <header class='app-header'>
     <div class="container">
-      <h1 class="logo"><RouterLink to="/">小兔鲜</RouterLink></h1>
+      <h1 class="logo"><router-link to="/">小兔鲜</router-link></h1>
       <!-- 头部导航组件 -->
       <AppHeaderNav />
+      <!-- /头部导航组件 -->
       <div class="search">
         <i class="iconfont icon-search"></i>
         <input type="text" placeholder="搜一搜">
@@ -19,6 +20,7 @@
 
 <script>
 import AppHeaderNav from '@/components/app-header-nav'
+
 export default {
   name: 'AppHeader',
   components: {

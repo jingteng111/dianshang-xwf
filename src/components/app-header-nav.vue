@@ -13,7 +13,7 @@
       >
         {{ item.name }}
       </router-link>
-      <div class="layer" :class="{open:item.open}">
+      <div class="layer" :class="{open: item.open}">
         <ul>
           <li
             v-for="sub in item.children"
@@ -36,6 +36,7 @@
 <script>
 import { computed } from 'vue'
 import { useStore } from 'vuex'
+
 export default {
   name: 'AppHeaderNav',
   setup () {
@@ -47,10 +48,10 @@ export default {
 
     // 跳转时关闭二级类目
     const show = (item) => {
-      store.commit('category/show', item.id)
+      store.commit('category/show', item)
     }
     const hide = (item) => {
-      store.commit('category/hide', item.id)
+      store.commit('category/hide', item)
     }
     return { list, show, hide }
   }

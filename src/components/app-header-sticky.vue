@@ -2,7 +2,9 @@
   <div class="app-header-sticky" :class="{show: y >= 78}">
     <div class="container">
       <router-link class="logo" to="/" />
+      <!-- 头部导航组件 -->
       <AppHeaderNav />
+      <!-- /头部导航组件 -->
       <div class="right">
         <router-link to="/" >品牌</router-link>
         <router-link to="/" >专题</router-link>

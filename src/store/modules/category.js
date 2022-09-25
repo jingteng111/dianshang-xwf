@@ -16,13 +16,13 @@ export default {
       state.list = payload
     },
     // 控制当前一级分类下的二级分类显示和隐藏
-    show (state, id) {
-      const currCategory = state.list.find(item => item.id === id)
-      currCategory.open = true
+    show (state, item) {
+      const category = state.list.find(category => category.id === item.id)
+      category.open = true
     },
-    hide (state, id) {
-      const currCategory = state.list.find(item => item.id === id)
-      currCategory.open = false
+    hide (state, item) {
+      const category = state.list.find(category => category.id === item.id)
+      category.open = false
     }
   },
   // 获取分类函数

@@ -1,30 +1,55 @@
 <template>
-  <!-- 顶部通栏 -->
-  <nav>顶部通栏</nav>
-  <!-- /顶部通栏 -->
+  <div>
+    <!-- 顶部通栏 -->
+    <AppTopnav />
+    <!-- /顶部通栏 -->
 
-  <!-- 头部组件 -->
-  <header>头部组件</header>
-  <!-- /头部组件 -->
+    <!-- 吸顶头部 -->
+    <AppHeaderSticky />
+    <!-- /吸顶头部 -->
 
-  <!-- 内容容器 -->
-  <div class="main">
-    <!-- 二级路由 -->
-    <router-view />
+    <!-- 头部组件 -->
+    <AppHeader />
+    <!-- /头部组件 -->
+
+    <!-- 内容容器 -->
+    <div class="app-body">
+      <!-- 二级路由 -->
+      <router-view />
+    </div>
+    <!-- /内容容器 -->
+
+    <!-- 底部组件 -->
+    <AppFooter />
+    <!-- /底部组件 -->
   </div>
-  <!-- /内容容器 -->
-
-  <!-- 底部组件 -->
-  <footer>底部组件</footer>
-  <!-- /底部组件 -->
 </template>
 
 <script>
+import AppTopnav from '@/components/app-topnav'
+import AppHeader from '@/components/app-header'
+import AppFooter from '@/components/app-footer'
+import AppHeaderSticky from '@/components/app-header-sticky'
+import { useStore } from 'vuex'
+
 export default {
-  name: 'LayoutIndex'
+  name: 'LayoutIndex',
+  components: {
+    AppTopnav,
+    AppHeader,
+    AppFooter,
+    AppHeaderSticky
+  },
+  // 获取分类数据
+  setup () {
+    const store = useStore()
+    store.dispatch('category/getList')
+  }
 }
 </script>
 
-<style>
-
+<style lang="less" scoped>
+.app-body{
+  min-height: 600px;
+}
 </style>

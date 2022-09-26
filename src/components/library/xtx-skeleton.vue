@@ -1,5 +1,9 @@
 <template>
-  <div class="xtx-skeleton" :style="{width,height}" :class="{shan:animated}">
+  <div
+    class="xtx-skeleton"
+    :style="{width,height}"
+    :class="{shan:animated}"
+  >
     <!-- 1 盒子-->
     <div class="block" :style="{backgroundColor:bg}"></div>
     <!-- 2 闪效果 xtx-skeleton 伪元素 --->
@@ -8,7 +12,7 @@
 <script>
 export default {
   name: 'XtxSkeleton',
-  // 使用的时候需要动态设置 高度，宽度，背景颜色，是否闪下
+  // 动态设置 高度，宽度，背景颜色，是否闪下
   props: {
     bg: {
       type: String,
@@ -29,7 +33,7 @@ export default {
   }
 }
 </script>
-<style scoped lang="less">
+<style lang="less" scoped>
 .xtx-skeleton {
   display: inline-block;
   position: relative;

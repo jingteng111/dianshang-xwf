@@ -1,6 +1,6 @@
 <template>
   <div class="app-header-sticky" :class="{show: y >= 78}">
-    <div class="container">
+    <div class="container" v-show="y >= 78">
       <router-link class="logo" to="/" />
       <!-- 头部导航组件 -->
       <AppHeaderNav />

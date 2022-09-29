@@ -1,14 +1,19 @@
-import XtxSkeleton from './xtx-skeleton.vue'
-import XtxCarousel from './xtx-carousel.vue'
-import XtxMore from './xtx-more.vue'
 import defaultImg from '@/assets/images/200.png'
+
+// 导入library文件夹下的所有组件
+// 参数：1. 目录  2. 是否加载子目录  3. 加载的正则匹配
+const importFn = require.context('./', false, /\.vue$/)
 
 export default {
   install (app) {
     // 在app上进行扩展
-    app.component(XtxSkeleton.name, XtxSkeleton)
-    app.component(XtxCarousel.name, XtxCarousel)
-    app.component(XtxMore.name, XtxMore)
+    // 批量注册全局组件
+    importFn.keys().forEach(key => {
+      // 导入组件
+      const component = importFn(key).default
+      // 注册组件
+      app.component(component.name, component)
+    })
     // 定义指令
     defineDirective(app)
   }

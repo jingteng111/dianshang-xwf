@@ -91,7 +91,6 @@ export default {
 
     // 记录选择品牌
     const changeBrand = (brandId) => {
-      console.log(filterData.value.brands)
       if (filterData.value.selectedBrand === brandId) return
       filterData.value.selectedBrand = brandId
       emit('filter-change', getFilterParams())
